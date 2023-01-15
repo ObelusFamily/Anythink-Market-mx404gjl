@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/node:16.18
+    steps:
+      - checkout
+      - run:
+          name: Install deps
+          command: yarn install
+          working_directory: frontend
+      - run:
+          name: Run tests
+          command: yarn test
+          working_directory: frontend
+
+workflows:
+  build-and-test:
+    jobs:
+      - build-and-test
