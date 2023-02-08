@@ -52,6 +52,9 @@ database:
   connectionProtocol: mongodb://
   databaseName: anythink-market
   replicaCount: 1
+  env:
+    userName: ""
+    password: ""
   service:
     type: ClusterIP
     port: 80
